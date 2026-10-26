@@ -1,0 +1,413 @@
+/* CONTENEDOR PRINCIPAL */
+
+#root {
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+  background-color: var(--blanco);
+  padding-bottom: 90px;
+}
+
+/* ENCABEZADO */
+
+.encabezado {
+  background-color: var(--blanco);
+  border-bottom: 1px solid var(--gris-claro);
+
+  padding: 24px 5%;
+}
+
+.encabezado strong {
+  display: block;
+
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--mirage);
+}
+
+.encabezado p {
+  margin: 6px 0 0;
+
+  font-size: 14px;
+  color: var(--verde);
+}
+
+/* CONTENIDO PRINCIPAL */
+
+.contenido {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 45px 24px;
+}
+
+.contenido h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.contenido p {
+  font-size: 16px;
+  color: var(--verde);
+}
+
+/* MENÚ INFERIOR */
+
+.menu-inferior {
+  position: fixed;
+
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 16px;
+  padding: 14px 20px;
+
+  background-color: var(--blanco);
+  border-top: 1px solid var(--gris-claro);
+
+  z-index: 100;
+}
+
+/* ENLACES DEL MENÚ */
+
+.menu-enlace {
+  flex: 1;
+  max-width: 220px;
+
+  padding: 14px 20px;
+
+  text-align: center;
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  color: var(--mirage);
+
+  border-radius: 10px;
+
+  transition: background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+/* EFECTO AL PASAR EL MOUSE */
+
+.menu-enlace:hover {
+  background-color: var(--gris-claro);
+  color: var(--verde);
+}
+
+/* PÁGINA ACTIVA */
+
+.menu-enlace.active {
+  background-color: var(--naranjo);
+  color: var(--mirage);
+}
+
+/* ACCESIBILIDAD CON TECLADO */
+
+.menu-enlace:focus-visible {
+  outline: 3px solid var(--verde);
+  outline-offset: 3px;
+}
+
+/* PÁGINA DE INICIO */
+
+.inicio-bienvenida {
+  background-color: var(--gris-claro);
+  padding: 35px;
+  border-radius: 16px;
+  margin-bottom: 45px;
+}
+
+.inicio-bienvenida h1 {
+  margin-top: 0;
+}
+
+.inventario-encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.inventario-encabezado h2 {
+  margin: 0;
+  font-size: 26px;
+}
+
+.inventario-encabezado span {
+  color: var(--verde);
+  font-size: 14px;
+}
+
+/* CUADRÍCULA DE PRODUCTOS */
+
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* TARJETAS */
+
+.producto-card {
+  background-color: var(--blanco);
+  border: 1px solid var(--naranjo);
+  border-radius: 14px;
+  overflow: hidden;
+
+  transition: transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.producto-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(225, 91, 4, 0.15);
+}
+
+/* IMAGEN DEL PRODUCTO */
+
+.producto-imagen {
+  background-color: var(--blanco);
+  height: 200px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* INFORMACIÓN */
+
+.producto-info {
+  padding: 20px;
+}
+
+.producto-categoria {
+  font-size: 12px !important;
+  color: var(--verde);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.producto-info h3 {
+  margin: 10px 0;
+  font-size: 19px;
+}
+
+.producto-precio {
+  color: var(--naranjo) !important;
+  font-size: 24px !important;
+  font-weight: 700;
+  margin: 14px 0;
+}
+
+.producto-stock {
+  display: inline-block;
+  background-color: var(--gris-claro);
+  color: var(--verde);
+
+  padding: 7px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+/* RESPONSIVIDAD */
+
+@media (max-width: 900px) {
+  .productos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .productos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .inventario-encabezado {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .inicio-bienvenida {
+    padding: 25px;
+  }
+}
+
+.producto-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 15px;
+}
+
+/* PÁGINA QUIÉNES SOMOS */
+
+.nosotros-intro {
+  margin-bottom: 40px;
+}
+
+.nosotros-intro h1 {
+  margin-top: 0;
+}
+
+.nosotros-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* TARJETAS INFORMATIVAS */
+
+.nosotros-card {
+  background-color: var(--gris-claro);
+  border-top: 5px solid var(--naranjo);
+  border-radius: 12px;
+
+  padding: 30px;
+  min-height: 250px;
+
+  transition: transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.nosotros-card h2 {
+  color: var(--mirage);
+  font-size: 22px;
+  margin: 0 0 20px;
+}
+
+.nosotros-card p {
+  color: var(--verde);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* EFECTO AL PASAR EL MOUSE */
+
+.nosotros-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(22, 35, 42, 0.08);
+}
+
+/* DISEÑO RESPONSIVO */
+
+@media (max-width: 900px) {
+  .nosotros-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .nosotros-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nosotros-card {
+    min-height: auto;
+    padding: 25px;
+  }
+}
+
+/* PÁGINA NUESTRAS TIENDAS */
+
+.tiendas-intro {
+  margin-bottom: 40px;
+}
+
+.tiendas-intro h1 {
+  margin-top: 0;
+}
+
+.tiendas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* TARJETAS DE SUCURSALES */
+
+.tienda-card {
+  background-color: var(--gris-claro);
+  border-top: 5px solid var(--naranjo);
+  border-radius: 12px;
+  padding: 30px;
+
+  transition: transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.tienda-card h2 {
+  color: var(--mirage);
+  font-size: 24px;
+  margin: 0 0 30px;
+}
+
+/* DETALLES DE CADA SUCURSAL */
+
+.tienda-detalle {
+  margin-bottom: 24px;
+}
+
+.tienda-detalle:last-child {
+  margin-bottom: 0;
+}
+
+.tienda-detalle h3 {
+  color: var(--verde);
+  font-size: 16px;
+  margin: 0 0 8px;
+}
+
+.tienda-detalle p {
+  color: var(--mirage);
+  font-size: 16px;
+  margin: 4px 0;
+}
+
+/* EFECTO HOVER */
+
+.tienda-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(22, 35, 42, 0.08);
+}
+
+/* DISEÑO RESPONSIVO */
+
+@media (max-width: 600px) {
+  .tiendas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tienda-card {
+    padding: 25px;
+  }
+}
+
+/* JERARQUÍA VISUAL */
+
+.encabezado strong {
+  font-size: 32px;
+}
+
+.inicio-bienvenida {
+  padding: 28px 35px;
+}
+
+.inicio-bienvenida h1 {
+  font-size: 27px;
+  margin-bottom: 10px;
+}
+
+.inicio-bienvenida p {
+  margin-bottom: 0;
+}

@@ -1,0 +1,54 @@
+/* PALETA DE COLORES DEL SUPERMERCADO */
+
+:root {
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  /* Colores principales */
+  --blanco: #FFFFFF;
+  --mirage: #16232A;
+  --naranjo: #FF5B04;
+  --verde: #075056;
+  --gris-claro: #E4EEF0;
+
+  /* Estilos generales */
+  color: var(--mirage);
+  background-color: var(--blanco);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Reinicio de estilos */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* Tipografía */
+
+h1,
+h2,
+h3 {
+  color: var(--mirage);
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* Enlaces */
+
+a {
+  color: inherit;
+}
