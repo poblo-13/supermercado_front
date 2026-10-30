@@ -1,29 +1,36 @@
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Layout from './components/Layout';
+
 import Inicio from './pages/Inicio';
 import Nosotros from './pages/Nosotros';
 import Tiendas from './pages/Tiendas';
-import MenuInferior from './components/MenuInferior';
+import AgregarArticulo from './pages/AgregarArticulo';
+import Inventario from './pages/Inventario';
+import NoEncontrada from './pages/NoEncontrada';
+
 import './App.css';
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="app">
-        <header className="encabezado">
-          <strong>Supermercado del Frente</strong>
-          <p>Sistema de gestión de inventario</p>
-        </header>
-
-        <div className="contenido">
-          <Routes>
-            <Route path="/" element={<Inicio />} />
-            <Route path="/nosotros" element={<Nosotros />} />
-            <Route path="/tiendas" element={<Tiendas />} />
-          </Routes>
-        </div>
-
-        <MenuInferior />
-      </div>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Inicio />} />
+          <Route path="nosotros" element={<Nosotros />} />
+          <Route path="tiendas" element={<Tiendas />} />
+          <Route
+            path="agregar-articulo"
+            element={<AgregarArticulo />}
+          />
+          <Route
+            path="inventario"
+            element={<Inventario />}
+          />
+          <Route path="*" element={<NoEncontrada />} />
+        </Route>
+      </Routes>
     </BrowserRouter>
   );
 }

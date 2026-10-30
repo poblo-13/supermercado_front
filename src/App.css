@@ -1,3 +1,8 @@
+/* =========================================
+   SUPERMERCADO DEL FRENTE
+   ESTILOS GENERALES
+========================================= */
+
 /* CONTENEDOR PRINCIPAL */
 
 #root {
@@ -10,31 +15,32 @@
   padding-bottom: 90px;
 }
 
-/* ENCABEZADO */
+/* =========================================
+   ENCABEZADO
+========================================= */
 
 .encabezado {
   background-color: var(--blanco);
   border-bottom: 1px solid var(--gris-claro);
-
   padding: 24px 5%;
 }
 
 .encabezado strong {
   display: block;
-
-  font-size: 26px;
+  font-size: 32px;
   font-weight: 700;
   color: var(--mirage);
 }
 
 .encabezado p {
   margin: 6px 0 0;
-
   font-size: 14px;
   color: var(--verde);
 }
 
-/* CONTENIDO PRINCIPAL */
+/* =========================================
+   CONTENIDO PRINCIPAL
+========================================= */
 
 .contenido {
   max-width: 1200px;
@@ -53,11 +59,12 @@
   color: var(--verde);
 }
 
-/* MENÚ INFERIOR */
+/* =========================================
+   MENÚ INFERIOR PRINCIPAL
+========================================= */
 
 .menu-inferior {
   position: fixed;
-
   bottom: 0;
   left: 0;
   width: 100%;
@@ -90,14 +97,14 @@
   font-weight: 600;
 
   color: var(--mirage);
-
   border-radius: 10px;
 
-  transition: background-color 0.2s ease,
+  transition:
+    background-color 0.2s ease,
     color 0.2s ease;
 }
 
-/* EFECTO AL PASAR EL MOUSE */
+/* EFECTO HOVER */
 
 .menu-enlace:hover {
   background-color: var(--gris-claro);
@@ -111,30 +118,95 @@
   color: var(--mirage);
 }
 
-/* ACCESIBILIDAD CON TECLADO */
+/* ACCESIBILIDAD */
 
 .menu-enlace:focus-visible {
   outline: 3px solid var(--verde);
   outline-offset: 3px;
 }
 
-/* PÁGINA DE INICIO */
+/* =========================================
+   MENÚ SECUNDARIO DE INVENTARIO
+========================================= */
+
+.menu-inventario {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 14px;
+  padding: 14px 20px;
+
+  border-bottom: 1px solid var(--gris-claro);
+  background-color: var(--blanco);
+}
+
+/* ENLACES DEL INVENTARIO */
+
+.menu-inventario-enlace {
+  padding: 12px 22px;
+  border-radius: 10px;
+
+  color: var(--verde);
+  background-color: var(--gris-claro);
+
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+
+  transition: background-color 0.2s ease;
+}
+
+/* EFECTO HOVER */
+
+.menu-inventario-enlace:hover {
+  background-color: #cddde0;
+}
+
+/* OPCIÓN ACTIVA */
+
+.menu-inventario-enlace.active {
+  background-color: var(--verde);
+  color: var(--blanco);
+}
+
+/* ACCESIBILIDAD */
+
+.menu-inventario-enlace:focus-visible {
+  outline: 3px solid var(--naranjo);
+  outline-offset: 3px;
+}
+
+/* =========================================
+   PÁGINA DE INICIO
+========================================= */
+
+/* BLOQUE DE BIENVENIDA */
 
 .inicio-bienvenida {
   background-color: var(--gris-claro);
-  padding: 35px;
+  padding: 28px 35px;
   border-radius: 16px;
   margin-bottom: 45px;
 }
 
 .inicio-bienvenida h1 {
   margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 27px;
 }
+
+.inicio-bienvenida p {
+  margin-bottom: 0;
+}
+
+/* ENCABEZADO DEL CATÁLOGO */
 
 .inventario-encabezado {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   gap: 15px;
   margin-bottom: 25px;
 }
@@ -149,7 +221,11 @@
   font-size: 14px;
 }
 
-/* CUADRÍCULA DE PRODUCTOS */
+/* =========================================
+   CATÁLOGO DE PRODUCTOS
+========================================= */
+
+/* CUADRÍCULA */
 
 .productos-grid {
   display: grid;
@@ -157,7 +233,7 @@
   gap: 24px;
 }
 
-/* TARJETAS */
+/* TARJETAS DE PRODUCTOS */
 
 .producto-card {
   background-color: var(--blanco);
@@ -165,13 +241,16 @@
   border-radius: 14px;
   overflow: hidden;
 
-  transition: transform 0.2s ease,
+  transition:
+    transform 0.2s ease,
     box-shadow 0.2s ease;
 }
 
+/* EFECTO HOVER */
+
 .producto-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 22px rgba(225, 91, 4, 0.15);
+  box-shadow: 0 8px 22px rgba(255, 91, 4, 0.15);
 }
 
 /* IMAGEN DEL PRODUCTO */
@@ -185,7 +264,14 @@
   align-items: center;
 }
 
-/* INFORMACIÓN */
+.producto-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 15px;
+}
+
+/* INFORMACIÓN DEL PRODUCTO */
 
 .producto-info {
   padding: 20px;
@@ -203,6 +289,8 @@
   font-size: 19px;
 }
 
+/* PRECIO */
+
 .producto-precio {
   color: var(--naranjo) !important;
   font-size: 24px !important;
@@ -210,8 +298,11 @@
   margin: 14px 0;
 }
 
+/* STOCK DISPONIBLE */
+
 .producto-stock {
   display: inline-block;
+
   background-color: var(--gris-claro);
   color: var(--verde);
 
@@ -220,37 +311,9 @@
   font-size: 13px;
 }
 
-/* RESPONSIVIDAD */
-
-@media (max-width: 900px) {
-  .productos-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .productos-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .inventario-encabezado {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .inicio-bienvenida {
-    padding: 25px;
-  }
-}
-
-.producto-imagen img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  padding: 15px;
-}
-
-/* PÁGINA QUIÉNES SOMOS */
+/* =========================================
+   PÁGINA QUIÉNES SOMOS
+========================================= */
 
 .nosotros-intro {
   margin-bottom: 40px;
@@ -259,6 +322,8 @@
 .nosotros-intro h1 {
   margin-top: 0;
 }
+
+/* CUADRÍCULA DE TARJETAS */
 
 .nosotros-grid {
   display: grid;
@@ -276,7 +341,8 @@
   padding: 30px;
   min-height: 250px;
 
-  transition: transform 0.2s ease,
+  transition:
+    transform 0.2s ease,
     box-shadow 0.2s ease;
 }
 
@@ -292,33 +358,16 @@
   line-height: 1.7;
 }
 
-/* EFECTO AL PASAR EL MOUSE */
+/* EFECTO HOVER */
 
 .nosotros-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 22px rgba(22, 35, 42, 0.08);
 }
 
-/* DISEÑO RESPONSIVO */
-
-@media (max-width: 900px) {
-  .nosotros-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .nosotros-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .nosotros-card {
-    min-height: auto;
-    padding: 25px;
-  }
-}
-
-/* PÁGINA NUESTRAS TIENDAS */
+/* =========================================
+   PÁGINA NUESTRAS TIENDAS
+========================================= */
 
 .tiendas-intro {
   margin-bottom: 40px;
@@ -327,6 +376,8 @@
 .tiendas-intro h1 {
   margin-top: 0;
 }
+
+/* CUADRÍCULA DE SUCURSALES */
 
 .tiendas-grid {
   display: grid;
@@ -340,9 +391,11 @@
   background-color: var(--gris-claro);
   border-top: 5px solid var(--naranjo);
   border-radius: 12px;
+
   padding: 30px;
 
-  transition: transform 0.2s ease,
+  transition:
+    transform 0.2s ease,
     box-shadow 0.2s ease;
 }
 
@@ -381,9 +434,70 @@
   box-shadow: 0 8px 22px rgba(22, 35, 42, 0.08);
 }
 
-/* DISEÑO RESPONSIVO */
+/* =========================================
+   PÁGINA DE INVENTARIO
+========================================= */
+
+/* SEPARACIÓN DE LA DESCRIPCIÓN */
+
+.pagina-inventario>p {
+  margin-bottom: 30px;
+}
+
+/*
+  La tabla del inventario utiliza Tailwind CSS.
+  Sus estilos están definidos directamente
+  en el componente Inventario.jsx.
+*/
+
+/* =========================================
+   DISEÑO RESPONSIVO
+========================================= */
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .productos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nosotros-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* CELULARES */
 
 @media (max-width: 600px) {
+
+  /* PÁGINA DE INICIO */
+
+  .productos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .inventario-encabezado {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .inicio-bienvenida {
+    padding: 25px;
+  }
+
+  /* PÁGINA QUIÉNES SOMOS */
+
+  .nosotros-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nosotros-card {
+    min-height: auto;
+    padding: 25px;
+  }
+
+  /* PÁGINA NUESTRAS TIENDAS */
+
   .tiendas-grid {
     grid-template-columns: 1fr;
   }
@@ -391,23 +505,35 @@
   .tienda-card {
     padding: 25px;
   }
+
+  /* MENÚ SECUNDARIO */
+
+  .menu-inventario-enlace {
+    flex: 1;
+    padding: 12px 10px;
+    font-size: 13px;
+  }
 }
 
-/* JERARQUÍA VISUAL */
+/* ENLACE DEL ENCABEZADO */
 
-.encabezado strong {
-  font-size: 32px;
+.encabezado a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.inicio-bienvenida {
-  padding: 28px 35px;
+.encabezado a:focus-visible {
+  outline: 3px solid var(--naranjo);
+  outline-offset: 4px;
 }
 
-.inicio-bienvenida h1 {
-  font-size: 27px;
-  margin-bottom: 10px;
+/* PÁGINA DE ERROR 404 */
+
+.pagina-error h1 {
+  color: var(--naranjo);
 }
 
-.inicio-bienvenida p {
-  margin-bottom: 0;
+.pagina-error a {
+  color: var(--blanco);
+  text-decoration: none;
 }

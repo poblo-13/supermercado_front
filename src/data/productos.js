@@ -1,7 +1,9 @@
 export const productos = [
     {
         id: 1,
-        nombre: "Arroz Tucapel 1 kg",
+        nombre: "Arroz 1 kg",
+        marca: "Tucapel",
+        tipo: "Grano",
         categoria: "Abarrotes",
         precio: 1490,
         stock: 25,
@@ -9,7 +11,9 @@ export const productos = [
     },
     {
         id: 2,
-        nombre: "Leche Soprole entera 1 L",
+        nombre: "Leche entera 1 L",
+        marca: "Soprole",
+        tipo: "Leche",
         categoria: "Lácteos",
         precio: 1190,
         stock: 40,
@@ -18,6 +22,8 @@ export const productos = [
     {
         id: 3,
         nombre: "Manzanas rojas 1 kg",
+        marca: "Frutas del Valle",
+        tipo: "Fruta",
         categoria: "Frutas",
         precio: 1990,
         stock: 18,
@@ -25,7 +31,9 @@ export const productos = [
     },
     {
         id: 4,
-        nombre: "Pan de molde integral Fuchs",
+        nombre: "Pan de molde integral",
+        marca: "Fuchs",
+        tipo: "Pan",
         categoria: "Panadería",
         precio: 2490,
         stock: 12,
@@ -33,7 +41,9 @@ export const productos = [
     },
     {
         id: 5,
-        nombre: "Aceite Miraflores 900 ml",
+        nombre: "Aceite 900 ml",
+        marca: "Miraflores",
+        tipo: "Aceite",
         categoria: "Abarrotes",
         precio: 2990,
         stock: 30,
@@ -41,7 +51,9 @@ export const productos = [
     },
     {
         id: 6,
-        nombre: "Yogur Colun frutilla 125 g",
+        nombre: "Yogur frutilla 125 g",
+        marca: "Colun",
+        tipo: "Yogur",
         categoria: "Lácteos",
         precio: 590,
         stock: 35,

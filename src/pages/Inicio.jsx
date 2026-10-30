@@ -1,6 +1,10 @@
-import { productos } from '../data/productos';
+import { useContext } from 'react';
+import { InventarioContext } from '../context/ContextoInventario';
+import ProductosLista from '../components/ProductosLista';
 
 function Inicio() {
+    const { articulos } = useContext(InventarioContext);
+
     return (
         <main className="inicio">
 
@@ -14,40 +18,12 @@ function Inicio() {
             <section className="inventario">
                 <div className="inventario-encabezado">
                     <h2>Nuestros productos</h2>
-                    <span>{productos.length} productos disponibles</span>
+                    <span>
+                        {articulos.length} productos disponibles
+                    </span>
                 </div>
 
-                <div className="productos-grid">
-                    {productos.map((producto) => (
-                        <article className="producto-card" key={producto.id}>
-
-                            <div className="producto-imagen">
-                                <img
-                                    src={producto.imagen}
-                                    alt={producto.nombre}
-                                    loading="lazy"
-                                />
-                            </div>
-
-                            <div className="producto-info">
-                                <p className="producto-categoria">
-                                    {producto.categoria}
-                                </p>
-
-                                <h3>{producto.nombre}</h3>
-
-                                <p className="producto-precio">
-                                    ${producto.precio.toLocaleString('es-CL')}
-                                </p>
-
-                                <span className="producto-stock">
-                                    {producto.stock} unidades disponibles
-                                </span>
-                            </div>
-
-                        </article>
-                    ))}
-                </div>
+                <ProductosLista articulos={articulos} />
             </section>
 
         </main>
