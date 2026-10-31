@@ -16,6 +16,8 @@ function AgregarArticulo() {
         stock: ''
     });
 
+    const [error, setError] = useState('');
+
     const manejarCambio = (e) => {
         const { name, value } = e.target;
 
@@ -48,9 +50,11 @@ function AgregarArticulo() {
             !Number.isInteger(nuevoArticulo.stock) ||
             nuevoArticulo.stock < 0
         ) {
+            setError('Revisa los datos ingresados. Los campos de texto no pueden contener solo espacios y el precio y stock deben ser válidos.');
             return;
         }
 
+        setError('');
         agregarArticulo(nuevoArticulo);
         navigate('/inventario');
     };
@@ -150,6 +154,12 @@ function AgregarArticulo() {
                     required
                 />
 
+                {error && (
+                    <p className="mensaje-error" role="alert">
+                        {error}
+                    </p>
+                )}
+                
                 <button
                     type="submit"
                     className="mt-3 w-full cursor-pointer rounded-lg border-0 bg-[#FF5B04] px-6 py-3 font-semibold text-white transition-colors hover:bg-[#E65303]"

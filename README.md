@@ -1,16 +1,44 @@
-# React + Vite
+# Supermercado del Frente
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Proyecto desarrollado para la asignatura **Desarrollo Frontend II**, utilizando React para crear una aplicación web de gestión de inventario de un supermercado.
 
-Currently, two official plugins are available:
+## Descripción
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+La aplicación permite consultar los productos disponibles y registrar nuevos artículos en el inventario. Cuenta con distintas páginas para navegar por la información del supermercado.
 
-## React Compiler
+## Funcionalidades
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Inicio con un catálogo de productos, precios y stock.
+- Página con información del supermercado.
+- Página con las sucursales y sus horarios de atención.
+- Formulario para registrar nuevos artículos.
+- Tabla para consultar los productos del inventario.
+- Navegación entre páginas sin recargar el sitio.
+- Diseño adaptable a computadores y dispositivos móviles.
 
-## Expanding the Oxlint configuration
+## Tecnologías utilizadas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- **React:** desarrollo de la interfaz mediante componentes.
+- **Vite:** creación y ejecución del proyecto.
+- **React Router:** navegación entre páginas.
+- **Context API y useState:** gestión del estado del inventario.
+- **Tailwind CSS y CSS:** estilos y diseño de la aplicación.
+- **JavaScript:** programación de las funcionalidades.
+
+## Instalación y ejecución
+
+Para ejecutar el proyecto es necesario tener instalado Node.js y npm.
+
+1. Descargar o clonar el repositorio.
+2. Abrir la carpeta del proyecto en Visual Studio Code.
+3. Ejecutar `npm install` para instalar las dependencias.
+4. Ejecutar `npm run dev` para iniciar el servidor.
+5. Abrir en el navegador la dirección que indique la terminal.
+
+Para comprobar el código se pueden utilizar los comandos `npm run lint` y `npm run build`.
+
+## Gestión del inventario
+
+El inventario utiliza un estado global con Context API, lo que permite compartir los productos entre las páginas.
+
+Los artículos nuevos se mantienen durante la navegación, pero al actualizar el navegador se restablece el inventario inicial, ya que los datos se almacenan temporalmente en memoria.

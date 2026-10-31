@@ -537,3 +537,12 @@
   color: var(--blanco);
   text-decoration: none;
 }
+
+/* MENSAJE DE VALIDACIÓN DEL FORMULARIO */
+
+.agregar-articulo .mensaje-error {
+  color: #B42318;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+}
