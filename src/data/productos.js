@@ -7,7 +7,7 @@ export const productos = [
         categoria: "Abarrotes",
         precio: 1490,
         stock: 25,
-        imagen: "/productos/arroz.webp",
+        imagen: `${import.meta.env.BASE_URL}productos/arroz.webp`
     },
     {
         id: 2,
@@ -17,7 +17,7 @@ export const productos = [
         categoria: "Lácteos",
         precio: 1190,
         stock: 40,
-        imagen: "/productos/leche.webp"
+        imagen: `${import.meta.env.BASE_URL}productos/leche.webp`
     },
     {
         id: 3,
@@ -27,7 +27,7 @@ export const productos = [
         categoria: "Frutas",
         precio: 1990,
         stock: 18,
-        imagen: "/productos/manzana.jpg"
+        imagen: `${import.meta.env.BASE_URL}productos/manzana.jpg`
     },
     {
         id: 4,
@@ -37,7 +37,7 @@ export const productos = [
         categoria: "Panadería",
         precio: 2490,
         stock: 12,
-        imagen: "/productos/pan.webp"
+        imagen: `${import.meta.env.BASE_URL}productos/pan.webp`
     },
     {
         id: 5,
@@ -47,7 +47,7 @@ export const productos = [
         categoria: "Abarrotes",
         precio: 2990,
         stock: 30,
-        imagen: "/productos/aceite.jpg"
+        imagen: `${import.meta.env.BASE_URL}productos/aceite.jpg`
     },
     {
         id: 6,
@@ -57,6 +57,6 @@ export const productos = [
         categoria: "Lácteos",
         precio: 590,
         stock: 35,
-        imagen: "/productos/yogur.jpg"
+        imagen: `${import.meta.env.BASE_URL}productos/yogur.jpg`
     }
 ];

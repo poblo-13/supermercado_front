@@ -1,23 +1,53 @@
-import { useState } from 'react';
+
+import { useReducer } from 'react';
 import { productos } from '../data/productos';
 import { InventarioContext } from './ContextoInventario';
+import { inventarioReducer } from './inventarioReducer';
+
+const estadoInicial = {
+    articulos: productos,
+    carrito: []
+};
 
 export function InventarioProvider({ children }) {
-    const [articulos, setArticulos] = useState(productos);
+    const [estado, dispatch] = useReducer(
+        inventarioReducer,
+        estadoInicial
+    );
 
     const agregarArticulo = (nuevoArticulo) => {
-        setArticulos((anteriores) => [
-            ...anteriores,
-            {
+        dispatch({
+            type: 'AGREGAR_ARTICULO',
+            articulo: {
                 ...nuevoArticulo,
                 id: crypto.randomUUID()
             }
-        ]);
+        });
+    };
+
+    const agregarAlCarrito = (id) => {
+        dispatch({
+            type: 'AGREGAR_AL_CARRITO',
+            id
+        });
+    };
+
+    const disminuirDelCarrito = (id) => {
+        dispatch({
+            type: 'DISMINUIR_DEL_CARRITO',
+            id
+        });
     };
 
     return (
         <InventarioContext.Provider
-            value={{ articulos, agregarArticulo }}
+            value={{
+                articulos: estado.articulos,
+                carrito: estado.carrito,
+                agregarArticulo,
+                agregarAlCarrito,
+                disminuirDelCarrito
+            }}
         >
             {children}
         </InventarioContext.Provider>

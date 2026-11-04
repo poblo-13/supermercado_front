@@ -1,8 +1,20 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { InventarioContext } from '../context/ContextoInventario';
+import { Link } from 'react-router-dom';
 
 function Inventario() {
     const { articulos } = useContext(InventarioContext);
+    const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('Todas');
+
+    const categorias = [
+        ...new Set(articulos.map((articulo) => articulo.categoria))
+    ];
+
+    const articulosFiltrados = categoriaSeleccionada === 'Todas'
+        ? articulos
+        : articulos.filter(
+            (articulo) => articulo.categoria === categoriaSeleccionada
+        );
     const estiloEncabezado =
         'px-5 py-4 text-left font-semibold text-[#16232A]';
 
@@ -17,6 +29,31 @@ function Inventario() {
                 Consulta todos los artículos disponibles
                 en nuestro supermercado.
             </p>
+
+
+            <div className="mb-6 flex max-w-sm flex-col gap-2">
+                <label
+                    htmlFor="filtro-categoria"
+                    className="font-semibold text-[#16232A]"
+                >
+                    Filtrar por categoría
+                </label>
+
+                <select
+                    id="filtro-categoria"
+                    value={categoriaSeleccionada}
+                    onChange={(e) => setCategoriaSeleccionada(e.target.value)}
+                    className="rounded-lg border border-[#AABFC3] bg-white px-4 py-3 text-[#075056] focus:border-[#075056] focus:outline-none focus:ring-2 focus:ring-[#075056]/20"
+                >
+                    <option value="Todas">Todas las categorías</option>
+
+                    {categorias.map((categoria) => (
+                        <option key={categoria} value={categoria}>
+                            {categoria}
+                        </option>
+                    ))}
+                </select>
+            </div>
 
 
             <div className="mt-8 overflow-x-auto rounded-xl border border-[#E4EEF0]">
@@ -45,13 +82,18 @@ function Inventario() {
                     </thead>
 
                     <tbody>
-                        {articulos.map((producto) => (
+                        {articulosFiltrados.map((producto) => (
                             <tr
                                 key={producto.id}
                                 className="transition-colors hover:bg-[#F5F9FA]"
                             >
                                 <td className={estiloCelda}>
-                                    {producto.nombre}
+                                    <Link
+                                        to={`/producto/${producto.id}`}
+                                        className="font-semibold text-[#075056] underline-offset-4 hover:text-[#FF5B04] hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#075056]"
+                                    >
+                                        {producto.nombre}
+                                    </Link>
                                 </td>
                                 <td className={estiloCelda}>
                                     {producto.marca}
