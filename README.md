@@ -44,9 +44,14 @@ npm run build
 
 El proyecto utiliza componentes reutilizables, páginas independientes, un contexto global para compartir los datos y un reducer para administrar el inventario y el carrito.
 
-## Repositorio
 
+## Enlaces del proyecto
+
+**Repositorio de GitHub:**  
 https://github.com/poblo-13/supermercado_front
+
+**Aplicación publicada en GitHub Pages:**  
+https://poblo-13.github.io/supermercado_front/
 
 ---
 
