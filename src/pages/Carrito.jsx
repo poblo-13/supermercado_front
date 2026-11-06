@@ -1,7 +1,6 @@
 
-import { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { InventarioContext } from '../context/ContextoInventario';
+import { Link } from 'react-router';
+import { useInventario } from '../hooks/useInventario';
 
 function Carrito() {
     const {
@@ -9,7 +8,7 @@ function Carrito() {
         carrito,
         agregarAlCarrito,
         disminuirDelCarrito
-    } = useContext(InventarioContext);
+    } = useInventario();
 
     const productosEnCarrito = carrito
         .map((item) => {

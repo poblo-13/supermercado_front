@@ -2,7 +2,9 @@
 @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/utilities.css" layer(utilities);
 
-/* PALETA DE COLORES DEL SUPERMERCADO */
+/* =========================================
+   PALETA DE COLORES DEL SUPERMERCADO
+========================================= */
 
 :root {
   font-family: "Segoe UI", Arial, sans-serif;
@@ -15,15 +17,17 @@
   --gris-claro: #E4EEF0;
 
   /* Estilos generales */
-  color: var(--mirage);
-  background-color: var(--blanco);
+  color: var(--texto-principal);
+  background-color: var(--fondo-app);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Reinicio de estilos */
+/* =========================================
+   REINICIO DE ESTILOS
+========================================= */
 
 * {
   box-sizing: border-box;
@@ -39,20 +43,52 @@ body {
   min-height: 100vh;
 }
 
-/* Tipografía */
+/* =========================================
+   TIPOGRAFÍA
+========================================= */
 
 h1,
 h2,
 h3 {
-  color: var(--mirage);
+  color: var(--texto-principal);
 }
 
 p {
   line-height: 1.6;
 }
 
-/* Enlaces */
+/* =========================================
+   ENLACES
+========================================= */
 
 a {
   color: inherit;
+}
+
+/* =========================================
+   COLORES DE INTERFAZ - MODO CLARO
+========================================= */
+
+:root {
+  --fondo-app: #FFFFFF;
+  --fondo-panel: #FFFFFF;
+  --fondo-suave: #E4EEF0;
+  --texto-principal: #16232A;
+  --texto-secundario: #075056;
+  --borde-suave: #E4EEF0;
+}
+
+/* =========================================
+   COLORES DE INTERFAZ - MODO NOCHE
+========================================= */
+
+:root[data-tema="oscuro"] {
+  color-scheme: dark;
+
+  --fondo-app: #16232A;
+  --fondo-panel: #1C3039;
+  --fondo-suave: #263D46;
+  --texto-principal: #F5F9FA;
+  --texto-secundario: #B6DADD;
+  --borde-suave: #3A515A;
 }

@@ -1,10 +1,9 @@
 
-import { useContext } from 'react';
-import { NavLink } from 'react-router-dom';
-import { InventarioContext } from '../context/ContextoInventario';
+import { NavLink } from 'react-router';
+import { useInventario } from '../hooks/useInventario';
 
 function MenuInventario() {
-    const { carrito } = useContext(InventarioContext);
+    const { carrito } = useInventario();
 
     const cantidadCarrito = carrito.reduce(
         (total, item) => total + item.cantidad,

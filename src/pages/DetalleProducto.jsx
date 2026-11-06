@@ -1,11 +1,10 @@
 
-import { useContext } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { InventarioContext } from '../context/ContextoInventario';
+import { Link, useParams } from 'react-router';
+import { useInventario } from '../hooks/useInventario';
 
 function DetalleProducto() {
     const { id } = useParams();
-    const { articulos, agregarAlCarrito } = useContext(InventarioContext);
+    const { articulos, agregarAlCarrito } = useInventario();
 
     const producto = articulos.find(
         (articulo) => String(articulo.id) === id
@@ -58,7 +57,7 @@ function DetalleProducto() {
                     </p>
 
                     <p>Stock disponible: {producto.stock} unidades</p>
-                    
+
                     <button
                         type="button"
                         onClick={() => agregarAlCarrito(producto.id)}
@@ -69,7 +68,6 @@ function DetalleProducto() {
                             ? 'Producto agotado'
                             : 'Agregar al carrito'}
                     </button>
-
 
                     <Link
                         to="/inventario"

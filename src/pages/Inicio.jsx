@@ -1,9 +1,9 @@
-import { useContext } from 'react';
-import { InventarioContext } from '../context/ContextoInventario';
+
+import { useInventario } from '../hooks/useInventario';
 import ProductosLista from '../components/ProductosLista';
 
 function Inicio() {
-    const { articulos } = useContext(InventarioContext);
+    const { articulos } = useInventario();
 
     return (
         <main className="inicio">

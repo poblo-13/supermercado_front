@@ -11,7 +11,8 @@
 
 .app {
   min-height: 100vh;
-  background-color: var(--blanco);
+  background-color: var(--fondo-app);
+  color: var(--texto-principal);
   padding-bottom: 90px;
 }
 
@@ -20,8 +21,8 @@
 ========================================= */
 
 .encabezado {
-  background-color: var(--blanco);
-  border-bottom: 1px solid var(--gris-claro);
+  background-color: var(--fondo-panel);
+  border-bottom: 1px solid var(--borde-suave);
   padding: 24px 5%;
 }
 
@@ -29,13 +30,13 @@
   display: block;
   font-size: 32px;
   font-weight: 700;
-  color: var(--mirage);
+  color: var(--texto-principal);
 }
 
 .encabezado p {
   margin: 6px 0 0;
   font-size: 14px;
-  color: var(--verde);
+  color: var(--texto-secundario);
 }
 
 /* =========================================
@@ -52,11 +53,12 @@
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 18px;
+  color: var(--texto-principal);
 }
 
 .contenido p {
   font-size: 16px;
-  color: var(--verde);
+  color: var(--texto-secundario);
 }
 
 /* =========================================
@@ -76,8 +78,8 @@
   gap: 16px;
   padding: 14px 20px;
 
-  background-color: var(--blanco);
-  border-top: 1px solid var(--gris-claro);
+  background-color: var(--fondo-panel);
+  border-top: 1px solid var(--borde-suave);
 
   z-index: 100;
 }
@@ -96,7 +98,7 @@
   font-size: 15px;
   font-weight: 600;
 
-  color: var(--mirage);
+  color: var(--texto-principal);
   border-radius: 10px;
 
   transition:
@@ -107,8 +109,8 @@
 /* EFECTO HOVER */
 
 .menu-enlace:hover {
-  background-color: var(--gris-claro);
-  color: var(--verde);
+  background-color: var(--fondo-suave);
+  color: var(--texto-secundario);
 }
 
 /* PÁGINA ACTIVA */
@@ -137,8 +139,8 @@
   gap: 14px;
   padding: 14px 20px;
 
-  border-bottom: 1px solid var(--gris-claro);
-  background-color: var(--blanco);
+  border-bottom: 1px solid var(--borde-suave);
+  background-color: var(--fondo-panel);
 }
 
 /* ENLACES DEL INVENTARIO */
@@ -147,8 +149,8 @@
   padding: 12px 22px;
   border-radius: 10px;
 
-  color: var(--verde);
-  background-color: var(--gris-claro);
+  color: var(--texto-secundario);
+  background-color: var(--fondo-suave);
 
   text-decoration: none;
   text-align: center;
@@ -160,7 +162,7 @@
 /* EFECTO HOVER */
 
 .menu-inventario-enlace:hover {
-  background-color: #cddde0;
+  background-color: color-mix(in srgb, var(--fondo-suave) 85%, var(--texto-secundario) 15%);
 }
 
 /* OPCIÓN ACTIVA */
@@ -184,7 +186,7 @@
 /* BLOQUE DE BIENVENIDA */
 
 .inicio-bienvenida {
-  background-color: var(--gris-claro);
+  background-color: var(--fondo-suave);
   padding: 28px 35px;
   border-radius: 16px;
   margin-bottom: 45px;
@@ -217,7 +219,7 @@
 }
 
 .inventario-encabezado span {
-  color: var(--verde);
+  color: var(--texto-secundario);
   font-size: 14px;
 }
 
@@ -236,7 +238,7 @@
 /* TARJETAS DE PRODUCTOS */
 
 .producto-card {
-  background-color: var(--blanco);
+  background-color: var(--fondo-panel);
   border: 1px solid var(--naranjo);
   border-radius: 14px;
   overflow: hidden;
@@ -279,7 +281,7 @@
 
 .producto-categoria {
   font-size: 12px !important;
-  color: var(--verde);
+  color: var(--texto-secundario);
   text-transform: uppercase;
   font-weight: 600;
 }
@@ -287,6 +289,7 @@
 .producto-info h3 {
   margin: 10px 0;
   font-size: 19px;
+  color: var(--texto-principal);
 }
 
 /* PRECIO */
@@ -303,8 +306,8 @@
 .producto-stock {
   display: inline-block;
 
-  background-color: var(--gris-claro);
-  color: var(--verde);
+  background-color: var(--fondo-suave);
+  color: var(--texto-secundario);
 
   padding: 7px 12px;
   border-radius: 8px;
@@ -334,7 +337,7 @@
 /* TARJETAS INFORMATIVAS */
 
 .nosotros-card {
-  background-color: var(--gris-claro);
+  background-color: var(--fondo-suave);
   border-top: 5px solid var(--naranjo);
   border-radius: 12px;
 
@@ -347,13 +350,13 @@
 }
 
 .nosotros-card h2 {
-  color: var(--mirage);
+  color: var(--texto-principal);
   font-size: 22px;
   margin: 0 0 20px;
 }
 
 .nosotros-card p {
-  color: var(--verde);
+  color: var(--texto-secundario);
   font-size: 16px;
   line-height: 1.7;
 }
@@ -388,7 +391,7 @@
 /* TARJETAS DE SUCURSALES */
 
 .tienda-card {
-  background-color: var(--gris-claro);
+  background-color: var(--fondo-suave);
   border-top: 5px solid var(--naranjo);
   border-radius: 12px;
 
@@ -400,7 +403,7 @@
 }
 
 .tienda-card h2 {
-  color: var(--mirage);
+  color: var(--texto-principal);
   font-size: 24px;
   margin: 0 0 30px;
 }
@@ -416,13 +419,13 @@
 }
 
 .tienda-detalle h3 {
-  color: var(--verde);
+  color: var(--texto-secundario);
   font-size: 16px;
   margin: 0 0 8px;
 }
 
 .tienda-detalle p {
-  color: var(--mirage);
+  color: var(--texto-principal);
   font-size: 16px;
   margin: 4px 0;
 }
@@ -552,56 +555,298 @@
 
 @media (max-width: 600px) {
 
-    .encabezado {
-        padding: 20px 16px;
-    }
+  .encabezado {
+    padding: 20px 16px;
+  }
 
-    .encabezado strong {
-        font-size: 24px;
-        overflow-wrap: anywhere;
-    }
+  .encabezado strong {
+    font-size: 24px;
+    overflow-wrap: anywhere;
+  }
 
-    .contenido {
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
-        padding: 28px 16px;
-    }
+  .contenido {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 28px 16px;
+  }
 
-    .contenido h1 {
-        font-size: 26px;
-    }
+  .contenido h1 {
+    font-size: 26px;
+  }
 
-    /* Menú de inventario */
+  /* Menú de inventario */
 
-    .menu-inventario {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 8px;
-        padding: 12px 16px;
-    }
+  .menu-inventario {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    padding: 12px 16px;
+  }
 
-    .menu-inventario-enlace {
-        min-width: 0;
-        padding: 12px 8px;
-        font-size: 13px;
-        overflow-wrap: anywhere;
-    }
+  .menu-inventario-enlace {
+    min-width: 0;
+    padding: 12px 8px;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+  }
 
-    .menu-inventario-enlace:last-child {
-        grid-column: 1 / -1;
-    }
+  .menu-inventario-enlace:last-child {
+    grid-column: 1 / -1;
+  }
 
-    /* Formulario */
+  /* Formulario */
 
-    .formulario-articulo {
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
-    }
+  .formulario-articulo {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
 
-    .formulario-articulo input,
-    .formulario-articulo select {
-        min-width: 0;
-    }
+  .formulario-articulo input,
+  .formulario-articulo select {
+    min-width: 0;
+  }
+}
+
+
+/* =========================================
+   CONTROL DEL TEMA EN EL ENCABEZADO
+========================================= */
+
+.encabezado-contenido {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.boton-tema {
+  padding: 12px 18px;
+  border: 1px solid var(--borde-suave);
+  border-radius: 10px;
+  background-color: var(--fondo-suave);
+  color: var(--texto-principal);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.boton-tema:hover {
+  background-color: var(--fondo-panel);
+  border-color: var(--texto-secundario);
+}
+
+.boton-tema:focus-visible {
+  outline: 3px solid var(--naranjo);
+  outline-offset: 3px;
+}
+
+/* =========================================
+   MODO NOCHE - FORMULARIO AGREGAR ARTÍCULO
+   Sobrescribe los colores fijos de Tailwind.
+========================================= */
+
+:root[data-tema="oscuro"] .formulario-articulo {
+  background-color: var(--fondo-suave);
+}
+
+:root[data-tema="oscuro"] .formulario-articulo label {
+  color: var(--texto-principal);
+}
+
+:root[data-tema="oscuro"] .formulario-articulo input,
+:root[data-tema="oscuro"] .formulario-articulo select {
+  background-color: #FFFFFF;
+  color: #16232A;
+  border-color: #AABFC3;
+  color-scheme: light;
+}
+
+:root[data-tema="oscuro"] .formulario-articulo input:focus-visible,
+:root[data-tema="oscuro"] .formulario-articulo select:focus-visible {
+  outline-color: var(--naranjo);
+}
+
+:root[data-tema="oscuro"] .agregar-articulo .mensaje-error {
+  color: #FFB4A9;
+}
+
+/* =========================================
+   MODO NOCHE - INVENTARIO Y FILTRO
+========================================= */
+
+:root[data-tema="oscuro"] .pagina-inventario label {
+  color: var(--texto-principal);
+}
+
+:root[data-tema="oscuro"] .pagina-inventario select {
+  background-color: var(--fondo-panel);
+  color: var(--texto-principal);
+  border-color: var(--borde-suave);
+  color-scheme: dark;
+}
+
+:root[data-tema="oscuro"] .pagina-inventario select:focus-visible {
+  outline-color: var(--naranjo);
+}
+
+:root[data-tema="oscuro"] .pagina-inventario .overflow-x-auto {
+  border-color: var(--borde-suave);
+}
+
+:root[data-tema="oscuro"] .pagina-inventario table {
+  background-color: var(--fondo-panel);
+  color: var(--texto-principal);
+}
+
+:root[data-tema="oscuro"] .pagina-inventario table thead {
+  background-color: var(--fondo-suave);
+}
+
+:root[data-tema="oscuro"] .pagina-inventario table th {
+  color: var(--texto-principal);
+}
+
+:root[data-tema="oscuro"] .pagina-inventario table td {
+  color: var(--texto-secundario);
+  border-color: var(--borde-suave);
+}
+
+:root[data-tema="oscuro"] .pagina-inventario table td a {
+  color: var(--texto-principal);
+  text-decoration: underline;
+  text-decoration-color: var(--naranjo);
+  text-underline-offset: 4px;
+}
+
+:root[data-tema="oscuro"] .pagina-inventario table td a:hover {
+  color: #FFAC7A;
+}
+
+:root[data-tema="oscuro"] .pagina-inventario table tbody tr:hover {
+  background-color: #304852;
+}
+
+:root[data-tema="oscuro"] .pagina-inventario [role="status"] {
+  background-color: var(--fondo-panel);
+  color: var(--texto-secundario);
+  border-color: var(--borde-suave);
+}
+
+/* =========================================
+   MODO NOCHE - DETALLE DEL PRODUCTO
+========================================= */
+
+:root[data-tema="oscuro"] .detalle-producto>div {
+  background-color: var(--fondo-panel);
+}
+
+/* Las fotografías mantienen un fondo claro. */
+:root[data-tema="oscuro"] .detalle-producto>div>div:first-child {
+  background-color: #E4EEF0;
+}
+
+:root[data-tema="oscuro"] .detalle-producto>div>div:first-child p {
+  color: #075056;
+}
+
+:root[data-tema="oscuro"] .detalle-producto section h2 {
+  color: var(--texto-principal);
+}
+
+:root[data-tema="oscuro"] .detalle-producto section p {
+  color: var(--texto-secundario);
+}
+
+:root[data-tema="oscuro"] .detalle-producto section p.text-2xl {
+  color: #FFAC7A;
+}
+
+:root[data-tema="oscuro"] .detalle-producto section a,
+:root[data-tema="oscuro"] .detalle-producto>a {
+  color: var(--texto-principal);
+  text-decoration-color: var(--naranjo);
+}
+
+/* =========================================
+   MODO NOCHE - CARRITO DE COMPRAS
+========================================= */
+
+:root[data-tema="oscuro"] .pagina-carrito article {
+  background-color: var(--fondo-panel);
+}
+
+:root[data-tema="oscuro"] .pagina-carrito article h2 {
+  color: var(--texto-principal);
+}
+
+:root[data-tema="oscuro"] .pagina-carrito article p {
+  color: var(--texto-secundario);
+}
+
+:root[data-tema="oscuro"] .pagina-carrito article button:first-child {
+  background-color: var(--fondo-suave);
+  color: var(--texto-principal);
+}
+
+:root[data-tema="oscuro"] .pagina-carrito article button:last-child {
+  background-color: #075056;
+  color: #FFFFFF;
+}
+
+:root[data-tema="oscuro"] .pagina-carrito article button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Mensaje del carrito vacío. */
+:root[data-tema="oscuro"] .pagina-carrito>div.rounded-xl {
+  background-color: var(--fondo-suave);
+}
+
+:root[data-tema="oscuro"] .pagina-carrito>div.rounded-xl p {
+  color: var(--texto-secundario);
+}
+
+:root[data-tema="oscuro"] .pagina-carrito>div.rounded-xl a {
+  color: var(--texto-principal);
+  text-decoration-color: var(--naranjo);
+}
+
+/* Panel del total, dentro del listado del carrito. */
+:root[data-tema="oscuro"] .pagina-carrito>div>div.rounded-xl {
+  background-color: var(--fondo-suave);
+}
+
+:root[data-tema="oscuro"] .pagina-carrito>div>div.rounded-xl h2 {
+  color: var(--texto-principal);
+}
+
+/* =========================================
+   MODO NOCHE - MENSAJES Y ESTADOS VACÍOS
+========================================= */
+
+:root[data-tema="oscuro"] .inicio [role="status"] {
+  background-color: var(--fondo-suave);
+  color: var(--texto-secundario);
+  border-color: var(--borde-suave);
+}
+
+/* =========================================
+   MEJORAS RESPONSIVAS DEL ENCABEZADO
+========================================= */
+
+@media (max-width: 600px) {
+  .encabezado-contenido {
+    align-items: stretch;
+  }
+
+  .boton-tema {
+    width: 100%;
+    text-align: center;
+  }
 }

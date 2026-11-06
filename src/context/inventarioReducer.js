@@ -10,7 +10,7 @@ export function inventarioReducer(estado, accion) {
 
         case 'AGREGAR_AL_CARRITO': {
             const articulo = estado.articulos.find(
-                (item) => String(item.id) === String(accion.id)
+                (item) => item.id === accion.id
             );
 
             if (!articulo || articulo.stock <= 0) {
@@ -18,7 +18,7 @@ export function inventarioReducer(estado, accion) {
             }
 
             const existeEnCarrito = estado.carrito.some(
-                (item) => String(item.id) === String(articulo.id)
+                (item) => item.id === articulo.id
             );
 
             return {
@@ -32,7 +32,7 @@ export function inventarioReducer(estado, accion) {
 
                 carrito: existeEnCarrito
                     ? estado.carrito.map((item) =>
-                        String(item.id) === String(articulo.id)
+                        item.id === articulo.id
                             ? { ...item, cantidad: item.cantidad + 1 }
                             : item
                     )
@@ -45,7 +45,7 @@ export function inventarioReducer(estado, accion) {
 
         case 'DISMINUIR_DEL_CARRITO': {
             const itemCarrito = estado.carrito.find(
-                (item) => String(item.id) === String(accion.id)
+                (item) => item.id === accion.id
             );
 
             if (!itemCarrito) {
@@ -56,17 +56,17 @@ export function inventarioReducer(estado, accion) {
                 ...estado,
 
                 articulos: estado.articulos.map((item) =>
-                    String(item.id) === String(accion.id)
+                    item.id === accion.id
                         ? { ...item, stock: item.stock + 1 }
                         : item
                 ),
 
                 carrito: itemCarrito.cantidad === 1
                     ? estado.carrito.filter(
-                        (item) => String(item.id) !== String(accion.id)
+                        (item) => item.id !== accion.id
                     )
                     : estado.carrito.map((item) =>
-                        String(item.id) === String(accion.id)
+                        item.id === accion.id
                             ? { ...item, cantidad: item.cantidad - 1 }
                             : item
                     )

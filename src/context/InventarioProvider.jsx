@@ -1,7 +1,7 @@
 
 import { useReducer } from 'react';
 import { productos } from '../data/productos';
-import { InventarioContext } from './ContextoInventario';
+import { InventarioContext } from './InventarioContext';
 import { inventarioReducer } from './inventarioReducer';
 
 const estadoInicial = {

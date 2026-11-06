@@ -1,44 +1,53 @@
 # Supermercado del Frente
 
-Proyecto desarrollado para la asignatura **Desarrollo Frontend II**, utilizando React para crear una aplicación web de gestión de inventario de un supermercado.
-
-## Descripción
-
-La aplicación permite consultar los productos disponibles y registrar nuevos artículos en el inventario. Cuenta con distintas páginas para navegar por la información del supermercado.
-
-## Funcionalidades
-
-- Inicio con un catálogo de productos, precios y stock.
-- Página con información del supermercado.
-- Página con las sucursales y sus horarios de atención.
-- Formulario para registrar nuevos artículos.
-- Tabla para consultar los productos del inventario.
-- Navegación entre páginas sin recargar el sitio.
-- Diseño adaptable a computadores y dispositivos móviles.
+Aplicación web desarrollada con React y Vite para gestionar el inventario de un supermercado. Permite consultar productos, registrar nuevos artículos y administrar un carrito de compras.
 
 ## Tecnologías utilizadas
 
-- **React:** desarrollo de la interfaz mediante componentes.
-- **Vite:** creación y ejecución del proyecto.
-- **React Router:** navegación entre páginas.
-- **Context API y useState:** gestión del estado del inventario.
-- **Tailwind CSS y CSS:** estilos y diseño de la aplicación.
-- **JavaScript:** programación de las funcionalidades.
+- React + Vite
+- JavaScript
+- React Router 7
+- Context API y useReducer
+- Tailwind CSS 4
+- CSS responsivo
+
+## Funcionalidades
+
+- Navegación entre Inicio, Nosotros, Tiendas e Inventario.
+- Registro de artículos con validaciones y mensajes de error por campo.
+- Filtrado de productos por categoría.
+- Visualización del detalle de cada producto.
+- Carrito de compras con actualización automática del stock.
+- Cálculo de cantidades, subtotales y total.
+- Modo claro y oscuro con preferencia guardada.
+- Diseño adaptable a computadores y dispositivos móviles.
 
 ## Instalación y ejecución
 
-Para ejecutar el proyecto es necesario tener instalado Node.js y npm.
+Clonar el repositorio e instalar las dependencias:
 
-1. Descargar o clonar el repositorio.
-2. Abrir la carpeta del proyecto en Visual Studio Code.
-3. Ejecutar `npm install` para instalar las dependencias.
-4. Ejecutar `npm run dev` para iniciar el servidor.
-5. Abrir en el navegador la dirección que indique la terminal.
+```bash
+git clone https://github.com/poblo-13/supermercado_front.git
+cd supermercado_front
+npm install
+npm run dev
+```
 
-Para comprobar el código se pueden utilizar los comandos `npm run lint` y `npm run build`.
+Para comprobar el proyecto:
 
-## Gestión del inventario
+```bash
+npm run lint
+npm run build
+```
 
-El inventario utiliza un estado global con Context API, lo que permite compartir los productos entre las páginas.
+## Organización
 
-Los artículos nuevos se mantienen durante la navegación, pero al actualizar el navegador se restablece el inventario inicial, ya que los datos se almacenan temporalmente en memoria.
+El proyecto utiliza componentes reutilizables, páginas independientes, un contexto global para compartir los datos y un reducer para administrar el inventario y el carrito.
+
+## Repositorio
+
+https://github.com/poblo-13/supermercado_front
+
+---
+
+**Proyecto académico — Desarrollo Frontend II**

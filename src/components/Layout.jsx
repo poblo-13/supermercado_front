@@ -1,5 +1,5 @@
 
-import { Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router';
 import Header from './Header';
 import MenuInventario from './MenuInventario';
 import MenuInferior from './MenuInferior';
