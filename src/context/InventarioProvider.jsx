@@ -32,6 +32,14 @@ export function InventarioProvider({ children }) {
         });
     };
 
+
+    const eliminarDelCarrito = (id) => {
+        dispatch({
+            type: 'ELIMINAR_DEL_CARRITO',
+            id
+        });
+    };
+
     const disminuirDelCarrito = (id) => {
         dispatch({
             type: 'DISMINUIR_DEL_CARRITO',
@@ -46,7 +54,8 @@ export function InventarioProvider({ children }) {
                 carrito: estado.carrito,
                 agregarArticulo,
                 agregarAlCarrito,
-                disminuirDelCarrito
+                disminuirDelCarrito,
+                eliminarDelCarrito
             }}
         >
             {children}

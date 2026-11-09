@@ -7,7 +7,8 @@ function Carrito() {
         articulos,
         carrito,
         agregarAlCarrito,
-        disminuirDelCarrito
+        disminuirDelCarrito,
+        eliminarDelCarrito
     } = useInventario();
 
     const productosEnCarrito = carrito
@@ -53,11 +54,21 @@ function Carrito() {
                     {productosEnCarrito.map((producto) => (
                         <article
                             key={producto.id}
-                            className="flex flex-col gap-2 rounded-xl border border-[#FF5B04] bg-white p-5 [&>p]:m-0 [&>h2]:m-0"
+                            className="relative flex flex-col gap-2 rounded-xl border border-[#FF5B04] bg-white p-5 [&>p]:m-0 [&>h2]:m-0"
                         >
-                            <h2 className="text-xl font-bold">
+                            <h2 className="pr-10 text-xl font-bold">
                                 {producto.nombre}
                             </h2>
+
+                            <button
+                                type="button"
+                                onClick={() => eliminarDelCarrito(producto.id)}
+                                aria-label={`Eliminar ${producto.nombre} del carrito`}
+                                title="Eliminar producto"
+                                className="absolute right-3 top-3 flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg bg-[#FF5B04] text-xl font-bold text-white transition-colors hover:bg-[#D94D03] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF5B04]"
+                            >
+                                &times;
+                            </button>
 
                             <p>
                                 Precio unitario: ${producto.precio.toLocaleString('es-CL')}

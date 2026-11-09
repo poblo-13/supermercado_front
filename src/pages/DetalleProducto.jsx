@@ -1,4 +1,5 @@
 
+import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router';
 import { useInventario } from '../hooks/useInventario';
 
@@ -6,9 +7,28 @@ function DetalleProducto() {
     const { id } = useParams();
     const { articulos, agregarAlCarrito } = useInventario();
 
+    const [avisoAgregado, setAvisoAgregado] = useState(0);
+
     const producto = articulos.find(
         (articulo) => String(articulo.id) === id
     );
+
+    useEffect(() => {
+        if (avisoAgregado === 0) return;
+
+        const temporizador = setTimeout(() => {
+            setAvisoAgregado(0);
+        }, 2000);
+
+        return () => clearTimeout(temporizador);
+    }, [avisoAgregado]);
+
+    const manejarAgregar = () => {
+        if (!producto || producto.stock <= 0) return;
+
+        agregarAlCarrito(producto.id);
+        setAvisoAgregado((anterior) => anterior + 1);
+    };
 
     if (!producto) {
         return (
@@ -60,7 +80,7 @@ function DetalleProducto() {
 
                     <button
                         type="button"
-                        onClick={() => agregarAlCarrito(producto.id)}
+                        onClick={manejarAgregar}
                         disabled={producto.stock === 0}
                         className="rounded-lg bg-[#FF5B04] px-6 py-3 font-semibold text-white transition-colors hover:bg-[#E65303] disabled:cursor-not-allowed disabled:bg-gray-400"
                     >
@@ -68,6 +88,16 @@ function DetalleProducto() {
                             ? 'Producto agotado'
                             : 'Agregar al carrito'}
                     </button>
+
+                    {avisoAgregado > 0 && (
+                        <p
+                            key={avisoAgregado}
+                            className="mensaje-agregado"
+                            role="status"
+                        >
+                            ¡Producto agregado al carrito!
+                        </p>
+                    )}
 
                     <Link
                         to="/inventario"

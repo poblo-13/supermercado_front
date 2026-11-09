@@ -73,6 +73,34 @@ export function inventarioReducer(estado, accion) {
             };
         }
 
+
+        case 'ELIMINAR_DEL_CARRITO': {
+            const itemCarrito = estado.carrito.find(
+                (item) => item.id === accion.id
+            );
+
+            if (!itemCarrito) {
+                return estado;
+            }
+
+            return {
+                ...estado,
+
+                articulos: estado.articulos.map((item) =>
+                    item.id === accion.id
+                        ? {
+                            ...item,
+                            stock: item.stock + itemCarrito.cantidad
+                        }
+                        : item
+                ),
+
+                carrito: estado.carrito.filter(
+                    (item) => item.id !== accion.id
+                )
+            };
+        }
+
         default:
             return estado;
     }
